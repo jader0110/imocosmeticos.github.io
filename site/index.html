@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Imô Cosméticos · Vitrine Virtual</title>
+<meta name="description" content="Sabonetes artesanais Imô. Com amor, Imô.">
+<meta name="theme-color" content="#ECE4F3">
+<!-- Prévia do link no WhatsApp/Instagram. Quando o domínio próprio estiver no ar, troque o endereço nas 2 linhas abaixo. -->
+<meta property="og:title" content="Imô Cosméticos · Vitrine Virtual">
+<meta property="og:description" content="Sabonetes artesanais Imô. Com amor, Imô.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://imocosmeticos.github.io/assets/og.jpg">
+<meta property="og:url" content="https://imocosmeticos.github.io/">
+<link rel="icon" href="assets/icone-192.png">
+<link rel="apple-touch-icon" href="assets/icone-180.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preload" href="assets/fontes/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fontes/cormorant-garamond-latin-500-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fontes/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fontes/jost-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"IM Serif";src:url(assets/fontes/cormorant-garamond-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:block}
+@font-face{font-family:"IM Serif";src:url(assets/fontes/cormorant-garamond-latin-500-italic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:block}
+@font-face{font-family:"IM Sans";src:url(assets/fontes/jost-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:block}
+@font-face{font-family:"IM Sans";src:url(assets/fontes/jost-latin-500-normal.woff2) format("woff2");font-weight:500;font-style:normal;font-display:block}
+:root{
+  --lilas:#ECE4F3;--areia:#F6F1EA;--linha:#C9B8DD;--roxo:#5A3F80;--tinta:#2E2240;--suave:#776A88;--papel:#FDFBF8;
+  --serif:"IM Serif","Cormorant Garamond",Garamond,Georgia,serif;--sans:"IM Sans",Jost,"Avenir Next","Segoe UI",sans-serif;
+  --s:min(100vw,56.25vh);
+}
+@supports (height:100dvh){:root{--s:min(100vw,56.25dvh)}}
+:root{--u:calc(var(--s)/405)}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--lilas);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:var(--serif);color:var(--tinta);-webkit-font-smoothing:antialiased}
+#app{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--lilas);transition:background-color .25s}
+.st{position:relative;width:var(--s);height:calc(var(--s)*16/9);overflow:hidden;animation:entra .22s ease-out}
+@keyframes entra{from{opacity:.35}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.st{animation:none}#app{transition:none}}
+.st>*{position:absolute;margin:0;box-sizing:border-box}
+.t{white-space:nowrap;font-kerning:normal;line-height:1.15}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:rgba(90,63,128,.18)}
+a.hit{z-index:3}
+a.nav::before{content:"";position:absolute;inset:calc(var(--u)*-10) calc(var(--u)*-10)}
+a:focus-visible{outline:2px solid var(--roxo);outline-offset:2px;border-radius:4px}
+.cta{box-shadow:0 calc(var(--u)*3) calc(var(--u)*10) rgba(46,34,64,.26);animation:pulso 2.6s ease-out infinite}
+@keyframes pulso{0%{box-shadow:0 calc(var(--u)*3) calc(var(--u)*10) rgba(46,34,64,.26),0 0 0 0 rgba(90,63,128,.45)}70%,100%{box-shadow:0 calc(var(--u)*3) calc(var(--u)*10) rgba(46,34,64,.26),0 0 0 calc(var(--u)*13) rgba(90,63,128,0)}}
+@media (prefers-reduced-motion:reduce){.cta{animation:none}}
+.im{object-fit:cover;display:block}
+.ct{object-fit:contain;display:block}
+button.hit{background:none;border:0;padding:0;margin:0;cursor:pointer;font:inherit;z-index:3;-webkit-tap-highlight-color:rgba(90,63,128,.18)}
+button.hit:focus-visible{outline:2px solid var(--roxo);outline-offset:2px;border-radius:4px}
+.pill{display:flex;align-items:center;justify-content:center;border-radius:999px;white-space:nowrap}
+/* foto ampliada */
+.zoom{position:fixed;inset:0;z-index:20;background:rgba(28,20,38,.95);display:flex;align-items:center;justify-content:center;overflow:hidden;touch-action:none;animation:entra .18s ease-out}
+.zoom img{max-width:100%;max-height:100%;object-fit:contain;transform-origin:center;touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab;will-change:transform}
+.zoom-x{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:12px;width:48px;height:48px;border-radius:50%;border:1px solid rgba(253,251,248,.5);background:rgba(28,20,38,.6);color:var(--papel);font-size:30px;line-height:1;cursor:pointer}
+.zoom-dica{position:absolute;left:0;right:0;bottom:calc(16px + env(safe-area-inset-bottom,0px));margin:0;text-align:center;color:rgba(253,251,248,.85);font:14px var(--sans);letter-spacing:.03em;pointer-events:none;padding:0 16px}
+/* janela do pedido (Direct do Instagram) */
+.ped{position:fixed;inset:0;z-index:30;background:rgba(28,20,38,.55);display:flex;align-items:flex-end;justify-content:center;animation:entra .18s ease-out}
+@media (min-height:700px) and (min-width:500px){.ped{align-items:center}}
+.ped-box{position:relative;width:100%;max-width:440px;max-height:92%;overflow:auto;box-sizing:border-box;background:var(--areia);border-radius:22px 22px 0 0;padding:22px 20px calc(18px + env(safe-area-inset-bottom,0px));text-align:center;font-family:var(--sans);color:var(--tinta)}
+@media (min-height:700px) and (min-width:500px){.ped-box{border-radius:22px}}
+.ped-x{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:1px solid var(--linha);background:var(--papel);font-size:24px;line-height:1;color:var(--tinta);cursor:pointer}
+.ped-logo{width:54px;height:48px;object-fit:contain;display:block;margin:0 auto}
+.ped h2{font:italic 500 30px/1.1 var(--serif);margin:8px 0 4px}
+.ped-ok{margin:0 0 12px;font-size:13px;font-weight:500;letter-spacing:.06em;color:#3E7A52}
+.ped-ok.falhou{color:var(--roxo)}
+.ped-msg{white-space:pre-wrap;word-break:break-word;text-align:left;margin:0 0 14px;padding:12px 14px;background:var(--papel);border:1px solid var(--linha);border-radius:12px;font:15px/1.45 var(--sans);color:var(--tinta);-webkit-user-select:text;user-select:text;max-height:30vh;overflow:auto}
+.ped-passos{text-align:left;margin:0 auto 16px;padding:0;list-style:none;counter-reset:p;display:grid;gap:8px;max-width:330px;font-size:14px;color:var(--suave)}
+.ped-passos li{counter-increment:p;display:flex;gap:10px;align-items:center}
+.ped-passos li::before{content:counter(p);flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--roxo);display:grid;place-items:center;font-size:12px;color:var(--roxo)}
+.ped-passos b{color:var(--tinta);font-weight:500}
+.ped-btn{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:var(--roxo);color:var(--papel);font-size:14px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;box-shadow:0 4px 14px rgba(46,34,64,.25)}
+.ped-btn:focus-visible{outline:2px solid var(--tinta);outline-offset:3px}
+.ped-copiar{margin-top:10px;border:0;background:none;color:var(--suave);font:13px var(--sans);text-decoration:underline;text-underline-offset:3px;padding:8px;cursor:pointer}
+/* mensagens de carregamento e erro */
+.msg{position:fixed;inset:0;display:grid;place-items:center;text-align:center;padding:0 24px;background:var(--lilas)}
+.msg h1{font:italic 500 34px var(--serif);margin:14px 0 8px}
+.msg p{margin:0 0 18px;color:var(--suave);font:16px/1.5 var(--sans)}
+.msg img{width:92px;height:82px;object-fit:contain}
+.msg button{font:500 13px var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:12px 26px;border-radius:999px;border:1px solid var(--roxo);background:transparent;color:var(--tinta);cursor:pointer}
+.aviso{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;background:var(--tinta);color:var(--papel);padding:10px 18px;border-radius:999px;font:14px var(--sans);letter-spacing:.02em;max-width:calc(100% - 32px);text-align:center;box-shadow:0 6px 20px rgba(28,20,38,.25)}
+</style>
+</head>
+<body>
+<div id="app" aria-live="polite">
+  <div class="msg"><div><img src="assets/emblema.svg" alt=""><p style="margin-top:14px">Carregando a vitrine…</p></div></div>
+</div>
+<div class="aviso" id="aviso" hidden></div>
+
+<script src="config.js"></script>
+<script src="lib/supabase.js"></script>
+<script src="js/comum.js"></script>
+<script src="js/vitrine.js"></script>
+</body>
+</html>
