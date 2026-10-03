@@ -6,11 +6,11 @@
    ============================================================ */
 window.IMO = {
   // Supabase > Project Settings > Data API > Project URL
-  SUPABASE_URL: "https://wypjeuyyytubigjiojdm.supabase.co/rest/v1/",
+  SUPABASE_URL: https://wypjeuyyytubigjiojdm.supabase.co/rest/v1/,
 
   // Supabase > Project Settings > API Keys > Publishable key (ou "anon public")
-  SUPABASE_ANON_KEY: "sb_publishable_PhuKY4qch7tCyoH2KwVlJA_PhkD-j7y",
+  SUPABASE_ANON_KEY: sb_publishable_PhuKY4qch7tCyoH2KwVlJA_PhkD-j7y,
 
   // Endereço da vitrine (com a barra no final). Quando tiver domínio próprio, troque aqui.
-  SITE_URL: "https://imocosmeticos.github.io/"
+  SITE_URL:https://imocosmeticos.github.io/
 };
